@@ -58,7 +58,7 @@ TYPER.prototype = {
   start: function () {
     this.generateWord()
     this.word.Draw()
-
+	document.getElementById("Skoor").innerHTML = this.score;
     window.addEventListener('keypress', this.keyPressed.bind(this))
   },
 
@@ -78,6 +78,7 @@ TYPER.prototype = {
     if (letter === this.word.left.charAt(0)) {
       this.word.removeFirstLetter()
 		this.score += 1
+		document.getElementById("Skoor").innerHTML = this.score;
       if (this.word.left.length === 0) {
         this.guessedWords += 1
         this.generateWord()
