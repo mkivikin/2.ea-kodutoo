@@ -63,6 +63,7 @@ TYPER.prototype = {
         this.difficultymultiplier = difficulty+1;
         this.generateWord()
         this.word.Draw()
+        timerStart();
         document.getElementById("Skoor").innerHTML = this.score;
         window.addEventListener('keypress', this.keyPressed.bind(this));
 
@@ -154,6 +155,24 @@ function gameStart(){
     console.log("mäng algab");
   }
 }
+
+function timerStart(){
+  let time = 60;
+  var timer;
+  timer = setTimeout(update, 1000);
+
+  function update () {
+    if(time > 0) {
+      time--;
+      document.getElementById("Timer").innerHTML = time;    
+      timer = setTimeout(update, 1000);
+    } else {
+      //end game
+    }
+  }
+
+} 
+
 
 window.onload = function () {
 	console.log("aken laeb")
