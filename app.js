@@ -14,6 +14,7 @@ const TYPER = function () {
   this.words = []
   this.word = null
   this.wordMinLength = 5
+  this.difficultymultiplier = 0
   this.guessedWords = 0
   this.score = 0
   this.multiplier = 0
@@ -57,19 +58,18 @@ TYPER.prototype = {
     xmlhttp.send()
   },
 
-  start: function () {
+  start: function (difficulty) {
+    console.log(difficulty);
+        this.difficultymultiplier = difficulty+1;
         this.generateWord()
         this.word.Draw()
         document.getElementById("Skoor").innerHTML = this.score;
-        window.addEventListener('keypress', this.keyPressed.bind(this))
-  },
+        window.addEventListener('keypress', this.keyPressed.bind(this));
 
-  register: function(name) {
-      
   },
 
   generateWord: function () {
-    const generatedWordLength = this.wordMinLength + parseInt(this.guessedWords / 5)
+    const generatedWordLength = this.difficultymultiplier + this.wordMinLength + parseInt(this.guessedWords / 5)
     const randomIndex = (Math.random() * (this.words[generatedWordLength].length - 1)).toFixed()
     const wordFromArray = this.words[generatedWordLength][randomIndex]
     this.word = new Word(wordFromArray, this.canvas, this.ctx)
@@ -147,8 +147,11 @@ function structureArrayByWordLength (words) {
 
 function gameStart(){
   if(document.getElementById("name").value != "") {
+    let difficulty = document.getElementById("difficulty").selectedIndex
+    //kustutab formi
+    document.getElementById("registerForm").innerHTML = "";
+    typer.start(difficulty);
     console.log("mäng algab");
-    typer.start();
   }
 }
 
