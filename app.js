@@ -1,3 +1,4 @@
+
 /* TYPER */
 const TYPER = function () {
   if (TYPER.instance_) {
@@ -18,7 +19,8 @@ const TYPER = function () {
   this.multiplier = 0
   this.init()
 }
-
+let name;
+let started = 0;
 window.TYPER = TYPER
 
 TYPER.prototype = {
@@ -46,7 +48,7 @@ TYPER.prototype = {
 
         typer.words = structureArrayByWordLength(wordsFromFile)
 
-        typer.start()
+        //typer.start()
 		console.log("onreadystatechange")
       }
     }
@@ -56,10 +58,14 @@ TYPER.prototype = {
   },
 
   start: function () {
-    this.generateWord()
-    this.word.Draw()
-	document.getElementById("Skoor").innerHTML = this.score;
-    window.addEventListener('keypress', this.keyPressed.bind(this))
+        this.generateWord()
+        this.word.Draw()
+        document.getElementById("Skoor").innerHTML = this.score;
+        window.addEventListener('keypress', this.keyPressed.bind(this))
+  },
+
+  register: function(name) {
+      
   },
 
   generateWord: function () {
@@ -137,6 +143,13 @@ function structureArrayByWordLength (words) {
   }
 
   return tempArray
+}
+
+function gameStart(){
+  if(document.getElementById("name").value != "") {
+    console.log("mäng algab");
+    typer.start();
+  }
 }
 
 window.onload = function () {
