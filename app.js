@@ -168,11 +168,14 @@ function timerStart(){
       gameEnd(document.getElementById("name").value, typer.score); // lisada gameEnd funktsioonile sisu
     }
   }
-
-} 
+}
 
 function gameEnd(name, score){
-  //Local storage 
+  //Local storage
+  localStorage.name = "";
+  localStorage.score = "";
+  Window.location.replace("scoreboard.html");
+  document.getElementById("result").innerHTML = localStorage.name, localStorage.score;
   console.log(name+" "+score);
 }
 
