@@ -20,7 +20,6 @@ const TYPER = function () {
   this.multiplier = 0
   this.init()
 }
-let name;
 let started = 0;
 window.TYPER = TYPER
 
@@ -34,7 +33,6 @@ TYPER.prototype = {
 
     this.canvas.width = this.WIDTH * 2
     this.canvas.height = this.HEIGHT * 2
-
     this.loadWords()
 	console.log("init")
   },
@@ -66,7 +64,6 @@ TYPER.prototype = {
         timerStart();
         document.getElementById("Skoor").innerHTML = this.score;
         window.addEventListener('keypress', this.keyPressed.bind(this));
-
   },
 
   generateWord: function () {
@@ -84,7 +81,7 @@ TYPER.prototype = {
 	document.getElementById("Skoor").innerHTML = this.score;
     if (letter === this.word.left.charAt(0)) {
       this.word.removeFirstLetter()
-		this.score += 1
+		  this.score += 1
 		document.getElementById("Skoor").innerHTML = this.score;
       if (this.word.left.length === 0) {
         this.guessedWords += 1
@@ -150,14 +147,15 @@ function gameStart(){
   if(document.getElementById("name").value != "") {
     let difficulty = document.getElementById("difficulty").selectedIndex
     //kustutab formi
-    document.getElementById("registerForm").innerHTML = "";
+    //document.getElementById("registerForm").innerHTML = "";
+    document.getElementById("registerForm").style.display = "none"; 
     typer.start(difficulty);
     console.log("mäng algab");
   }
 }
 
 function timerStart(){
-  let time = 60;
+  let time = 5;
   var timer;
   timer = setTimeout(update, 1000);
 
@@ -167,12 +165,16 @@ function timerStart(){
       document.getElementById("Timer").innerHTML = time;    
       timer = setTimeout(update, 1000);
     } else {
-      //end game
+      gameEnd(document.getElementById("name").value, typer.score); // lisada gameEnd funktsioonile sisu
     }
   }
 
 } 
 
+function gameEnd(name, score){
+  //Local storage 
+  console.log(name+" "+score);
+}
 
 window.onload = function () {
 	console.log("aken laeb")
