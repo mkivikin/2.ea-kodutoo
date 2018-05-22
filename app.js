@@ -1,4 +1,3 @@
-
 /* TYPER */
 const TYPER = function () {
   if (TYPER.instance_) {
@@ -148,7 +147,7 @@ function gameStart(){
     let difficulty = document.getElementById("difficulty").selectedIndex
     //kustutab formi
     //document.getElementById("registerForm").innerHTML = "";
-    document.getElementById("registerForm").style.display = "none"; 
+    document.getElementById("registerForm").style.display = "none";
     typer.start(difficulty);
     console.log("mäng algab");
   }
@@ -162,10 +161,10 @@ function timerStart(){
   function update () {
     if(time > 0) {
       time--;
-      document.getElementById("Timer").innerHTML = time;    
+      document.getElementById("Timer").innerHTML = time;
       timer = setTimeout(update, 1000);
     } else if (time == 0) {
-      gameEnd
+      gameEnd()
     }
   }
 }
@@ -174,11 +173,10 @@ function gameEnd(name, score){
   //Local storage
   localStorage.name = "";
   localStorage.score = "";
-  Window.location("scoreboard.html");
+  location.replace("scoreboard.html");
   document.getElementById("result").innerHTML = localStorage.name, localStorage.score;
   console.log(name+" "+score);
   localStorage.setItem(this.name, score);
-  window.location.replace("scoreboard.html")
 }
 
 window.onload = function () {
