@@ -165,24 +165,21 @@ function timerStart(){
       document.getElementById("Timer").innerHTML = time;    
       timer = setTimeout(update, 1000);
     } else if (time == 0) {
-      TYPER().end();
+      gameEnd
     }
   }
 }
 
-end: function () {
-    localStorage.setItem(this.name, score);
-    window.location.replace("scoreboard.html")
-  }
-
-/*function gameEnd(name, score){
+function gameEnd(name, score){
   //Local storage
   localStorage.name = "";
   localStorage.score = "";
   Window.location("scoreboard.html");
   document.getElementById("result").innerHTML = localStorage.name, localStorage.score;
   console.log(name+" "+score);
-}*/
+  localStorage.setItem(this.name, score);
+  window.location.replace("scoreboard.html")
+}
 
 window.onload = function () {
 	console.log("aken laeb")
