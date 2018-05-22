@@ -174,8 +174,8 @@ function gameEnd(name, score){
   //Local storage
   localStorage.setItem('name', name);
   localStorage.setItem('score', score);
-  //location.replace("scoreboard.html");
   console.log(localStorage.name+", "+localStorage.score);
+  location.replace("scoreboard.html");
 }
 
 
