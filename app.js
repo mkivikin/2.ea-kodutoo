@@ -172,12 +172,9 @@ function timerStart(){
 
 function gameEnd(name, score){
   //Local storage
-  localStorage.setItem('name', name);
-  localStorage.setItem('score', score);
-  console.log(localStorage.name+", "+localStorage.score);
+  localStorage.setItem(name, score);
   location.replace("scoreboard.html");
 }
-
 
 window.onload = function () {
 	console.log("aken laeb")

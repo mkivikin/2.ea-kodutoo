@@ -4,7 +4,14 @@
 	<meta charset="UTF-8">
 	<title>edetabel</title>
 </head>
-<body>
+<body onload="loadStorage()">
   <div id="result"> </div>
+  <script>function loadStorage(){
+    let append = "";
+    for(let i = 0; i < localStorage.length; i++) {
+      append = append + localStorage.key(i) + " - " + localStorage.getItem(localStorage.key(i)) + "\n";
+    }
+    document.getElementById("result").innerHTML = append;
+  }</script>
 </body>
 </html>
