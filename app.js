@@ -9,7 +9,7 @@ const TYPER = function () {
   this.HEIGHT = window.innerHeight
   this.canvas = null
   this.ctx = null
-
+  this.name = ''
   this.words = []
   this.word = null
   this.wordMinLength = 5
@@ -145,9 +145,10 @@ function structureArrayByWordLength (words) {
 function gameStart(){
   if(document.getElementById("name").value != "") {
     let difficulty = document.getElementById("difficulty").selectedIndex
+    typer.name = document.getElementById("name").value;
     //kustutab formi
-    //document.getElementById("registerForm").innerHTML = "";
     document.getElementById("registerForm").style.display = "none";
+    document.getElementById("content").style.display = "none";
     typer.start(difficulty);
     console.log("mäng algab");
   }
@@ -164,20 +165,19 @@ function timerStart(){
       document.getElementById("Timer").innerHTML = time;
       timer = setTimeout(update, 1000);
     } else if (time == 0) {
-      gameEnd()
+      gameEnd(typer.name, typer.score);
     }
   }
 }
 
 function gameEnd(name, score){
   //Local storage
-  localStorage.name = "";
-  localStorage.score = "";
-  location.replace("scoreboard.html");
-  document.getElementById("result").innerHTML = localStorage.name, localStorage.score;
-  console.log(name+" "+score);
-  localStorage.setItem(this.name, score);
+  localStorage.setItem('name', name);
+  localStorage.setItem('score', score);
+  //location.replace("scoreboard.html");
+  console.log(localStorage.name+", "+localStorage.score);
 }
+
 
 window.onload = function () {
 	console.log("aken laeb")
