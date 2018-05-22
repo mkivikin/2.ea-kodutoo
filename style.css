@@ -1,3 +1,11 @@
+section {
+	background-color: White;
+	border: 10px groove #009900;
+	color: Black;
+	text-align: center;
+	font: 24px Arial, sans-serif;
+}
+
 #Skoor {
 	color: Red;
 	display:inline-block;
@@ -27,7 +35,6 @@
 #registerForm {
 	width: 150px;
     height: 128px;
-    position: absolute;
     top:0;
     bottom: 0;
     left: 0;

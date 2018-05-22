@@ -21,15 +21,22 @@
     <script src="app.js"></script>
   </head>
   <body>
+  
   <div id ="Skoor">0</div>
   <div id ="Timer">60</div>
+  <section id="content">
+  <h1>Reeglid</h1>
+  <p>Mängu eesmärgiks on 60 sekundi jooksul kirjutada korrektselt võimalikult palju sõnu.</p>
+  <p>Iga vale klahvi vajutus maksab kindla arvu punkte.</p>
+  <p>Mängu alustamiseks sisestage enda nimi, raskustase ja vajutage "Mängima".</p>
+  </section>
   <div id ="registerForm">
     <form>
       <input id="name" type="text">
       <select id="difficulty">
-        <option id="easy">ez</option>
-        <option id="medium">medium</option>
-        <option id="hard">hard</option>
+        <option id="easy">Lihtne</option>
+        <option id="medium">Keerulisem</option>
+        <option id="hard">Raske</option>
       </select>
       <button id="startb" type="button" onclick="gameStart();">Mängima<button>
     </form>

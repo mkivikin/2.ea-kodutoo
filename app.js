@@ -164,20 +164,25 @@ function timerStart(){
       time--;
       document.getElementById("Timer").innerHTML = time;    
       timer = setTimeout(update, 1000);
-    } else {
-      gameEnd(document.getElementById("name").value, typer.score); // lisada gameEnd funktsioonile sisu
+    } else if (time == 0) {
+      TYPER().end();
     }
   }
 }
 
-function gameEnd(name, score){
+end: function () {
+    localStorage.setItem(this.name, score);
+    window.location.replace("scoreboard.html")
+  }
+
+/*function gameEnd(name, score){
   //Local storage
   localStorage.name = "";
   localStorage.score = "";
-  Window.location.replace("scoreboard.html");
+  Window.location("scoreboard.html");
   document.getElementById("result").innerHTML = localStorage.name, localStorage.score;
   console.log(name+" "+score);
-}
+}*/
 
 window.onload = function () {
 	console.log("aken laeb")
