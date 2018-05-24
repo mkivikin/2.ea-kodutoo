@@ -5,6 +5,12 @@ Mängu eesmärk on võimalikult kiiresti ekraanile tekkivaid sõnu ära trükkid
 
 #In the main page you have to insert your name and choose the difficulty. There are also instructions written on the screen. After you have inserted your name and chosen the difficulty you press play and then the game starts.
 ![First Page](https://i.imgur.com/YWyszEW.png)
+![Game](https://i.imgur.com/UOfc7va.png)
+#After you have finished the game, the game will redirect you to the result page, where you can see locally stored best results.
+![Results Page](https://i.imgur.com/1KrOgHD.png)
+
+#This is a simplified scheme of the game
+![Scheme](https://i.imgur.com/6WbVDwd.png)
 
 ### Tähtpäev 26.03.2018 23:59
 
