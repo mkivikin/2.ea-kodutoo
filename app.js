@@ -174,7 +174,8 @@ function gameEnd(name, score){
   //Local storage
   localStorage.setItem(name, score);
   location.replace("scoreboard.html");
-}
+} 
+
 
 window.onload = function () {
 	console.log("aken laeb")

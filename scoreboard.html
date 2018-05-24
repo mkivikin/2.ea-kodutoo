@@ -8,10 +8,32 @@
   <div id="result"> </div>
   <script>function loadStorage(){
     let append = "";
-    for(let i = 0; i < localStorage.length; i++) {
-      append = append + localStorage.key(i) + " - " + localStorage.getItem(localStorage.key(i)) + "\n";
+	let append1 = "";
+    for(let i = 2; i < localStorage.length; i++) {
+	  let tableRow = document.createElement("tr");
+	  let th = document.createElement("th");
+	  let textNodeKey = document.createTextNode(localStorage.key(i));
+	  th.appendChild(textNodeKey);
+	  let td = document.createElement("td");
+	  let textNodeValue = document.createTextNode(localStorage.getItem(localStorage.key(i)));
+	  td.appendChild(textNodeValue);
+	  tableRow.appendChild(th);
+	  tableRow.appendChild(td);
+	  document.getElementById("scoretable").appendChild(tableRow);
     }
-    document.getElementById("result").innerHTML = append;
-  }</script>
+	
+	}
+  
+  
+  </script>
+  
+  <table id="scoretable" style="width:50%" align="center">
+  <thead>
+	<tr>
+		<th>Mängija</th>
+		<th align="left">Skoor</th>
+	</tr>
+  </thead>
+  </table>
 </body>
 </html>

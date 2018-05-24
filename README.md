@@ -3,6 +3,9 @@
 # Autorid: Peeter RooP, Marek Kivikink, Oskar Juksar
 Mängu eesmärk on võimalikult kiiresti ekraanile tekkivaid sõnu ära trükkida. Sõnad on võetud [Eesti Keele Instituudi lehelt](http://www.eki.ee/tarkvara/wordlist/) – [lemmad2013](http://www.eki.ee/tarkvara/wordlist/lemmad2013.txt). Aluseks tuleb võtta kood **[eesrakenduste-arendamine-2018k/klahvimine](https://github.com/eesrakenduste-arendamine-2018k/klahvimine)**. 
 
+#In the main page you have to insert your name and choose the difficulty. There are also instructions written on the screen. After you have inserted your name and chosen the difficulty you press play and then the game starts.
+![First Page](https://i.imgur.com/YWyszEW.png)
+
 ### Tähtpäev 26.03.2018 23:59
 
 ## Nõuded
